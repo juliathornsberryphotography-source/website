@@ -1,0 +1,247 @@
+:root {
+  color-scheme: light;
+  --bg: #ffe5eb;
+  --surface: #fff0f3;
+  --text: #1f1119;
+  --accent: #ff6c75;
+  --accent-dark: #d54459;
+  --muted: #7d5469;
+  --border: #ff8a9d;
+  --shadow: rgba(224, 94, 118, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top left, rgba(255, 108, 117, 0.12), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(255, 146, 165, 0.2), transparent 30%),
+    var(--bg);
+  line-height: 1.6;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.8), transparent 22%),
+    radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.8), transparent 16%);
+}
+
+.page-shell {
+  position: relative;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+.page-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 16px solid transparent;
+  border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M7 20C20 5 40 5 55 20s30 15 43 0 30-15 38 0' fill='none' stroke='%23ff8a9d' stroke-width='10'/%3E%3C/svg%3E") 30 round;
+  z-index: -1;
+  border-radius: 42px;
+}
+
+.hero {
+  background: linear-gradient(180deg, rgba(255, 243, 246, 0.98), rgba(255, 232, 238, 0.98));
+  border-radius: 42px;
+  padding: 2.5rem;
+  box-shadow: 0 24px 60px var(--shadow);
+}
+
+.hero-copy {
+  max-width: 720px;
+}
+
+.hero-copy-full {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.82rem;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+h1,
+h2 {
+  margin: 0 0 0.8rem;
+  line-height: 1.05;
+}
+
+h1 {
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(3.8rem, 6vw, 5.2rem);
+  color: #45223c;
+}
+
+.subhead {
+  font-size: 1.4rem;
+  letter-spacing: 0.04em;
+  margin-top: -0.25rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+h2 {
+  font-size: 2rem;
+  color: #4f243f;
+}
+
+.lead,
+.section-text {
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 720px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.8rem;
+}
+
+.hero-actions a,
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: var(--accent);
+  color: white;
+  padding: 0.95rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.hero-actions a:hover,
+.contact-links a:hover {
+  transform: translateY(-1px);
+  background: var(--accent-dark);
+}
+
+.intro-section {
+  margin: 2rem 0 0;
+  text-align: center;
+}
+
+.intro-badge {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.8rem 1.4rem;
+  background: rgba(255, 108, 117, 0.16);
+  color: var(--accent-dark);
+  font-weight: 700;
+  border-radius: 999px;
+  letter-spacing: 0.08em;
+}
+
+.intro-text {
+  margin: 0 auto;
+  max-width: 720px;
+  font-size: 1.1rem;
+  color: #6a3d51;
+}
+
+.header-photo,
+.hero-image,
+.pricing-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 32px;
+  box-shadow: 0 24px 50px rgba(218, 95, 119, 0.18);
+  display: block;
+  object-fit: cover;
+}
+
+.pricing-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.hero-visual {
+  min-height: 380px;
+}
+
+.pricing-section {
+  margin-top: 2.5rem;
+}
+
+.section {
+  position: relative;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(237, 178, 201, 0.45);
+  border-radius: 36px;
+  padding: 2rem;
+  box-shadow: 0 18px 40px rgba(218, 95, 119, 0.1);
+}
+
+.section + .section {
+  margin-top: 2rem;
+}
+
+.section-head {
+  margin-bottom: 1.5rem;
+}
+
+.contact {
+  padding-bottom: 2.5rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media (max-width: 860px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+
+  .hero-image,
+  .pricing-image {
+    border-radius: 28px;
+  }
+}
+
+@media (max-width: 560px) {
+  .page-shell {
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  .hero {
+    padding: 1.8rem;
+  }
+
+  h1 {
+    font-size: 3.6rem;
+  }
+
+  .hero-actions,
+  .contact-links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
